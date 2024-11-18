@@ -3,17 +3,12 @@ import { useState } from "react";
 
 export default function Player() {
   const playerName = useRef();
-  const filePicker = useRef();
 
   const [enteredPlayerName, setEnteredPlayerName] = useState('');
 
   function handleClick() {
     setEnteredPlayerName(playerName.current.value); 
     playerName.current.value = ''
-  }
-
-  function handlePick() {
-    filePicker.current.click
   }
 
   return (
@@ -24,8 +19,6 @@ export default function Player() {
           ref={playerName}
           type="text" />
         <button onClick={handleClick}>Set Name</button>
-        <input ref={filePicker} hidden type="file" />
-        <button>Pick a file </button>
       </p>
     </section>
   );
